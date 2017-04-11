@@ -51,5 +51,11 @@ public class Objet {
 		if(Main.scene.getxPos() >= 0 && Main.scene.getxPos() <= 4430){
 		  this.setX(this.getX() - Main.scene.getDx());		
 	    }
-	}		
+	}
+	
+	// si l'objet est en contact avec un autre objet, il font une mutation qui leurs permet de devenir un et unique objet, l
+	// Une méthode mutation permettra de crée un environnement qui ferra muttez les objets en bloc plus long
+	// X Horizontal // Y Vertical 
+	
+	
 }

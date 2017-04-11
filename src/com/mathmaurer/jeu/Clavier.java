@@ -33,10 +33,13 @@ public class Clavier implements KeyListener {
 	        	Main.scene.mario.setMarche(true);
 				Main.scene.setDx(-1);}			
 			// mario saute
-	        if(e.getKeyCode() == KeyEvent.VK_SPACE){ 
-	        	Main.scene.mario.setSaut(true);  
-	        	Audio.playSound("/audio/saut.wav");
-	        }
+			if(Main.scene.mario.isSaut() == false){
+				if(e.getKeyCode() == KeyEvent.VK_SPACE){ 
+		        	Main.scene.mario.setSaut(true);  
+		        	Audio.playSound("/audio/saut.wav");
+		        }
+			}
+		        
 		}		
 	}
 	

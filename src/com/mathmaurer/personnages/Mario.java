@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 
 import com.mathmaurer.audio.Audio;
 import com.mathmaurer.jeu.Main;
+import com.mathmaurer.objets.Cadeau;
 import com.mathmaurer.objets.Objet;
 import com.mathmaurer.objets.Piece;
 
@@ -156,13 +157,22 @@ public class Mario extends Personnage {
 		}
         if(super.contactDessus(objet) == true){
 			Main.scene.setHautPlafond(objet.getY() + objet.getHauteur()); // le plafond devient le dessous de l'objet
+			System.out.println("Sa passe dans l'objet");
 		}else if(super.contactDessus(objet) == false && this.saut == false){
 			Main.scene.setHautPlafond(0);
 		}
 	}
 	
+	// Test des contact avec les Cadeau
+	
+	public void contactCadeau(Cadeau cadeau){
+		if(super.contactCadeauDessus(cadeau) == true){
+			System.out.println("Sa passe");
+		}
+	}
 	
 
+	
 	public boolean contactPiece(Piece piece){		
 		if(this.contactArriere(piece) == true || this.contactAvant(piece) == true || this.contactDessous(piece) == true || this.contactDessus(piece) == true){
 			return true;			

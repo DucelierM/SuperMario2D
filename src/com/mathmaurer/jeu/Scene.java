@@ -14,6 +14,7 @@ import com.mathmaurer.affichage.Score;
 import com.mathmaurer.audio.Audio;
 import com.mathmaurer.objets.Bloc;
 import com.mathmaurer.objets.Cadeau;
+import com.mathmaurer.objets.ChampignonUp;
 import com.mathmaurer.objets.Objet;
 import com.mathmaurer.objets.Piece;
 import com.mathmaurer.objets.TuyauRouge;
@@ -77,6 +78,7 @@ public class Scene extends JPanel {
 	public Cadeau cadeau6;
 	public Cadeau cadeau7;
 
+	public ChampignonUp champUp1;
 	
 	
 	public Champ champ1;
@@ -175,6 +177,8 @@ public class Scene extends JPanel {
 		cadeau6 = new Cadeau(4050,180);
 		cadeau7 = new Cadeau(4700,180);
 		
+		champUp1 = new ChampignonUp(402,180);
+		
 		champ1 = new Champ(800, 263);
 		champ2 = new Champ(1100, 263);
 		champ3 = new Champ(2100, 263);
@@ -237,6 +241,8 @@ public class Scene extends JPanel {
 		this.tabObjets.add(this.cadeau5);
 		this.tabObjets.add(this.cadeau6);
 		this.tabObjets.add(this.cadeau7);
+		
+		this.tabObjets.add(this.champUp1);
 
 		
 		tabChamps = new ArrayList<Champ>();	
@@ -377,6 +383,8 @@ public class Scene extends JPanel {
  		    }
  		}
  		
+ 		 		
+ 		
  	    // Détections des contacts des champignons avec les personnages (hors mario)
  		for(int i = 0; i < this.tabChamps.size(); i++){ 
  			// champignons
@@ -429,6 +437,11 @@ public class Scene extends JPanel {
  	 			}
  	 	    }
  	 	}
+ 	 	
+ 	 	/*
+ 	 	 * Détection des contacts entre objets
+ 	 	 * 
+ 	 	 */
  	 	
  		// Déplacement de tous les objets "fixes" du jeu et des personnages (hors mario)
  		this.deplacementFond();

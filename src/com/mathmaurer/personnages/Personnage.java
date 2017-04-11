@@ -5,6 +5,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 import com.mathmaurer.jeu.Main;
+import com.mathmaurer.objets.Cadeau;
 import com.mathmaurer.objets.Objet;
 
 public class Personnage {
@@ -122,6 +123,11 @@ public class Personnage {
 		if(this.x + this.largeur < objet.getX() + 5 || this.x > objet.getX() + objet.getLargeur() - 5 || this.y < objet.getY() + objet.getHauteur() || this.y > objet.getY() + objet.getHauteur() + 5){return false;}
 		else{return true;}
 	}
+    
+    protected boolean contactCadeauDessus(Cadeau cadeau){
+    	if(this.x + this.largeur < cadeau.getX() + 5 || this.x > cadeau.getX() + cadeau.getLargeur() - 5 || this.y < cadeau.getY() + cadeau.getHauteur() || this.y > cadeau.getY() + cadeau.getHauteur() + 5){return false;}
+		else{return true;}
+    }
 	
     public boolean proche(Objet objet){   	
     	if((this.x > objet.getX() - 10 && this.x < objet.getX() + objet.getLargeur() + 10) 
