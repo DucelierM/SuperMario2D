@@ -250,6 +250,7 @@ public class Mario extends Personnage {
 						setTransformation("mario");
 						toucheLevelDown(personnage);
 						setCompteurVie(2);
+						Audio.playSound("/audio/mario-retrecit.wav");
 					}
 					break;
 				
@@ -260,6 +261,7 @@ public class Mario extends Personnage {
 						this.setLargeur(29);
 						toucheLevelDown(personnage);
 						setCompteurVie(1);
+						Audio.playSound("/audio/mario-retrecit.wav");
 
 					}
 					
