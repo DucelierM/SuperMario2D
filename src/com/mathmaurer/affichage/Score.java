@@ -3,13 +3,11 @@ package com.mathmaurer.affichage;
 public class Score {
 
 	//**** VARIABLES ****//
-	private final int NBRE_TOTAL_PIECES = 10;
-	private int nbrePieces;
+	private final int NBRE_TOTAL_PIECES = 20; // Choix d'une variable Final, elle ne peut être modifier (SETTER) 
+	private int nbrePieces; 
 		
 	//**** CONSTRUCTEUR ****//
-	public Score(){
-		this.nbrePieces = 0;
-	}
+	public Score(){this.nbrePieces = 0;}
 
 			
 	//**** GETTERS ****//
