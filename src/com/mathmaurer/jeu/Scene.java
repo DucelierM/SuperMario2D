@@ -505,8 +505,9 @@ public class Scene extends JPanel {
  	 	for(int i = 0; i < this.tabTortues.size(); i++){
  	 		if(this.mario.proche(this.tabTortues.get(i))&&this.tabTortues.get(i).isVivant() == true){
 	 			this.mario.contact(this.tabTortues.get(i));
+	 			if(this.tabTortues.get(i).isVivant() == false){Audio.playSound("/audio/ecrasePersonnage.wav");}	 
  	 		}
-	 		if(this.tabTortues.get(i).isVivant() == false){Audio.playSound("/audio/ecrasePersonnage.wav");}	 				 	 			 	 		
+	 						 	 			 	 		
 
  	 	}
  	 	
@@ -546,6 +547,7 @@ public class Scene extends JPanel {
  		for(int i = 0; i < this.tabCadeau.size(); i++){
  			//System.out.println(this.tabCadeau.get(i).isEtatCadeau());
  			g2.drawImage(this.tabCadeau.get(i).getImgObjet(), this.tabCadeau.get(i).getX(), this.tabCadeau.get(i).getY(), null);
+ 			
  			if(this.tabItems.get(i).isEtatCadeau()==false){ // Si il ne contient plus d'objet, le cadeau devient vide
  				g2.drawImage(this.bloc1.getImgObjet(), this.tabCadeau.get(i).getX(), this.tabCadeau.get(i).getY(), null);
  			}
@@ -570,6 +572,8 @@ public class Scene extends JPanel {
  	 							this.mario.setCompteurVie(2);
  	 							this.mario.setTransformation("mario");
  							}
+ 							Audio.playSound("/audio/mario-power.wav");
+ 							// Quand mario se fait toucher par un ennemies Audio.playSound("/audio/mario-retrecit.wav");
  							this.champUp1.setY(this.champUp1.getY()+200);
  							
  						}
@@ -584,6 +588,7 @@ public class Scene extends JPanel {
  							//this.tabItems.remove(i);
  							this.mario.setCompteurVie(3);
  							this.fleur1.setY(this.fleur1.getY()+200);
+ 							Audio.playSound("/audio/mario-power.wav");
  						}
  					}
  				}
@@ -600,6 +605,7 @@ public class Scene extends JPanel {
  	 							this.mario.setTransformation("mario");
  							}
  							this.champUp2.setY(this.champUp2.getY()+200);
+ 							Audio.playSound("/audio/mario-power.wav");
 
  						}
  					}
@@ -629,6 +635,7 @@ public class Scene extends JPanel {
  							//this.tabItems.remove(i);
  							
  							this.champUp3.setY(this.champUp3.getY()+200);
+ 							Audio.playSound("/audio/mario-power.wav");
 
  						}
  					}
@@ -646,6 +653,7 @@ public class Scene extends JPanel {
  	 							this.mario.setTransformation("mario");
  							}
  							this.champUp4.setY(this.champUp4.getY()+200);
+ 							Audio.playSound("/audio/mario-power.wav");
  						}
  					}
  				}
