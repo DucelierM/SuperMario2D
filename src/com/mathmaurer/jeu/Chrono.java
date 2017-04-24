@@ -2,7 +2,7 @@ package com.mathmaurer.jeu;
 
 public class Chrono implements Runnable {
 	//**** VARIABLES ****//
-    private final int PAUSE = 3; // temps d'attente en ms entre 2 tours de boucle
+    private final int PAUSE = 5; // temps d'attente en ms entre 2 tours de boucle
 	
 	@Override
 	public void run(){		
