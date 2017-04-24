@@ -102,6 +102,10 @@ public class Personnage {
 		return img;
 	}
     
+    
+    // Contact avec les Objets
+    
+    
     protected boolean contactAvant(Objet objet){
 		if(this.isVersDroite() == true){
 			if(this.x + this.largeur < objet.getX() || this.x + this.largeur > objet.getX() + 5 || this.y + this.hauteur <= objet.getY() || this.y >= objet.getY() + objet.getHauteur()){return false;}
@@ -124,17 +128,29 @@ public class Personnage {
 		else{return true;}
 	}
     
-    protected boolean contactCadeauDessus(Cadeau cadeau){
-    	if(this.x + this.largeur < cadeau.getX() + 5 || this.x > cadeau.getX() + cadeau.getLargeur() - 5 || this.y < cadeau.getY() + cadeau.getHauteur() || this.y > cadeau.getY() + cadeau.getHauteur() + 5){return false;}
-		else{return true;}
-    }
-	
     public boolean proche(Objet objet){   	
     	if((this.x > objet.getX() - 10 && this.x < objet.getX() + objet.getLargeur() + 10) 
     	|| (this.x + this.largeur > objet.getX() - 10 && this.x + this.largeur < objet.getX() + objet.getLargeur() + 10)){return true;}
     	else{return false;}
     }
-        
+    
+    
+    
+    // Contact avec les cadeaux 
+    
+    public boolean contactCadeauDessous(Cadeau cadeau){
+    	if(this.x + this.largeur < cadeau.getX() + 5 || this.x > cadeau.getX() + cadeau.getLargeur() - 5 || this.y < cadeau.getY() + cadeau.getHauteur() || this.y > cadeau.getY() + cadeau.getHauteur() + 5){return false;}
+		else{return true;}
+    }
+    public boolean procheCadeau(Cadeau cadeau){   	
+    	if((this.x > cadeau.getX() - 10 && this.x < cadeau.getX() + cadeau.getLargeur() + 10) 
+    	|| (this.x + this.largeur > cadeau.getX() - 10 && this.x + this.largeur < cadeau.getX() + cadeau.getLargeur() + 10)){return true;}
+    	else{return false;}
+    }
+
+    // Contact avec les personnages 
+    
+    
     protected boolean contactAvant(Personnage personnage){
 		if(this.isVersDroite() == true){
 			if(this.x + this.largeur < personnage.getX() || this.x + this.largeur > personnage.getX() + 5 || this.y + this.hauteur <= personnage.getY() || this.y >= personnage.getY() + personnage.getHauteur()){return false;}
@@ -158,5 +174,10 @@ public class Personnage {
     	else{return false;}
     }
     
+    public boolean procheTortue(Personnage personnage){  	
+    	if((this.x > personnage.getX() - 150 && this.x < personnage.getX() + personnage.getLargeur() + 150) 
+    	|| (this.x + this.largeur > personnage.getX() - 150 && this.x + this.largeur < personnage.getX() + personnage.getLargeur() + 150)){return true;}
+    	else{return false;}
+    }
     
 }

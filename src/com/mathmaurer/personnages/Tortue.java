@@ -8,7 +8,7 @@ import com.mathmaurer.objets.Objet;
 
 public class Tortue extends Personnage implements Runnable{
 	//**** VARIABLES ****//
-	private final int PAUSE = 30; // temps d'attente en ms entre 2 tours de boucle
+	private int PAUSE = 15; // temps d'attente en ms entre 2 tours de boucle
 	private int dxTortue;	
 	private Image imgTortue;
 	private ImageIcon icoTortue;
@@ -31,9 +31,15 @@ public class Tortue extends Personnage implements Runnable{
 	public Image getImgTortue() {return imgTortue;}
 
 			
+	
 	//**** SETTERS ****//
 			
 			
+	public void setPAUSE(int pAUSE) {
+		PAUSE = pAUSE;
+	}
+
+
 	//**** METHODES ****//
 	public void bouge(){ // Déplacement de la tortue
 		if(this.vivant == true){
