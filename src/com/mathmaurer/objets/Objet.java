@@ -5,14 +5,19 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 import com.mathmaurer.jeu.Main;
+import com.mathmaurer.personnages.Personnage;
 
 
 public class Objet {
 	//**** VARIABLES ****//
-	private int largeur, hauteur; //dimensions de l'objet
-	private int x, y; //position de l'objet	
+	protected int largeur; //dimensions de l'objet
+	protected int hauteur;
+	protected int x; //position de l'objet	
+	protected int y;
 	protected Image imgObjet;
 	protected ImageIcon icoObjet;
+	private int emplacement = 0;
+
 	
 	
 	//**** CONSTRUCTEUR ****//	
@@ -34,6 +39,18 @@ public class Objet {
 	public int getHauteur() {return hauteur;}
 	
 	public Image getImgObjet() {return imgObjet;}
+	
+	
+
+
+	public int getEmplacement() {
+		return emplacement;
+	}
+
+
+	public void setEmplacement(int emplacement) {
+		this.emplacement = emplacement;
+	}
 
 
 	//**** SETTERS ****//	
@@ -51,6 +68,11 @@ public class Objet {
 		if(Main.scene.getxPos() >= 0 && Main.scene.getxPos() <= 4430){
 		  this.setX(this.getX() - Main.scene.getDx());		
 	    }
+	}
+	
+	protected boolean contactDessus(Personnage personnage){
+		if(this.x + this.largeur < personnage.getX() + 5 || this.x > personnage.getX() + personnage.getLargeur() - 5 || this.y < personnage.getY() + personnage.getHauteur() || this.y > personnage.getY() + personnage.getHauteur() + 5){return false;}
+		else{return true;}
 	}
 	
 	// si l'objet est en contact avec un autre objet, il font une mutation qui leurs permet de devenir un et unique objet, l
